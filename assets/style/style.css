@@ -1,0 +1,65 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: KumbhSans;
+    src: url('../fonts/KumbhSans-Bold.ttf');
+}
+
+.container {
+    height: 98vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(234,236,235,255);
+    font-family: KumbhSans;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 20px 40px;
+    text-align: center;
+    background-color: whitesmoke;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25);
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card > * {
+    margin: 5px;
+}
+
+.card-show-number {
+    font-size: 30px;
+    background-color: rgba(62,64,61,255);
+    color: white;
+    text-align: center;
+    width: auto;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.card-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: rgba(60,61,61,255);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.card-btn:disabled {
+    background-color: darkgray;
+    cursor: default;
+}
