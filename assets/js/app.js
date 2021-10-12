@@ -48,32 +48,38 @@ container.append(card);
     let increment = document.getElementById('increment');
     let decrement = document.getElementById('decrement');
     //Focus number
-    let int = document.getElementById('number');
+    let output = document.getElementById('number');
 
     //Set default style
     if (number === 0) {
         decrement.disabled = true;
-    }
+    };
 
     //Function to decrement number
-    decrement.addEventListener('click',() => {
-        if (number > 0)  {
+    function test(sign,output) {
+        let number = document.getElementById('number').innerHTML;
+        number = parseInt(number, 10);
+        console.log(number)
+
+        if (sign == "neg" && number >0)  {
             number -= 1;
-            int.innerHTML = number;
+            output.innerHTML = number;
+        } 
+        else if (sign == "pls") {
+            number += 1;
+            output.innerHTML = number;
         }
+
         if (number === 0) {
             decrement.disabled = true;
-        }
-    })
-    
-    //Function to incremnet number
-    increment.addEventListener('click',() => {
-        number += 1;
-        int.innerHTML = number;
-
-        if (number !== 0) {
+        } else {
             decrement.disabled = false;
         }
-    })
+    }
+
+    decrement.addEventListener('click', () => test('neg',output));
+    
+    //Function to incremnet number
+    increment.addEventListener('click', () => test('pls',output));
 
     
